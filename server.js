@@ -21,6 +21,10 @@ app.listen(port, () => {
     console.log(`server is listening 3000`);
 });
 
+app.get("/", (req, res) => {
+    res.send("hello!");
+} )
+
 const handlePost = async (req, res, next, workStatus, workPlace) => {
     // TODO : Slack 회신
     res.send('완료!');
