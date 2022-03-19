@@ -1,8 +1,11 @@
 const {GoogleSpreadsheet} = require("google-spreadsheet"); 
 require('dotenv').config();
 
-const gs_creds = require(process.env.GS_CREDS);
+const gs_creds_string = process.env.GS_CREDS;
+const gs_creds = JSON.parse(gs_creds_string);
+
 const doc = new GoogleSpreadsheet(process.env.SPREADSHEET_ID);
+
 
 const authGoogleSheet = async() => { 
     try{
