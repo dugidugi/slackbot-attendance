@@ -22,7 +22,6 @@ const getUserImg = async(userId) => {
     user:userId
   })
 
-  // console.log(resp);
   return resp.user.profile.image_512;
 };
 
