@@ -6,7 +6,6 @@ const gs_creds = JSON.parse(gs_creds_string);
 
 const doc = new GoogleSpreadsheet(process.env.SPREADSHEET_ID);
 
-
 const authGoogleSheet = async() => { 
     try{
         await doc.useServiceAccountAuth(gs_creds); 
