@@ -1,11 +1,6 @@
 require('dotenv').config();
 const ssc = require('./spreadsheet');
-const Slack = require('slack-node');  // 슬랙 모듈 사용
 const slackConnect = require('./slackConnect');
-
-const slack = new Slack();
-slack.setWebhook(process.env.WEBHOOK_URI);
-
 
 // server.js
 // const https = require("https");
