@@ -7,6 +7,13 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 
+////////Heroku - sleep 방지//////
+const http = require("http");
+setInterval(function () {
+    http.get("http://dugi-slackbot.herokuapp.com/");
+  }, 600000); // every 10 minutes
+/////////////////////
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
