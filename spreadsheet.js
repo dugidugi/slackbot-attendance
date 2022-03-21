@@ -9,8 +9,7 @@ const doc = new GoogleSpreadsheet(process.env.SPREADSHEET_ID);
 const authGoogleSheet = async() => { 
     try{
         await doc.useServiceAccountAuth(gs_creds); 
-        await doc.loadInfo() 
-        console.log("ok")
+        await doc.loadInfo();
     }catch(err){ 
         console.log( "AUTH ERROR ", err) 
     } 

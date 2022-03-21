@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 
 const handlePost = async (req, res, next, workStatus, workPlace) => {
     // TODO : Slack 회신
-    res.send('완료!');
+    res.send('하이!');
 
     const {text} = req.body;
     const {user_id} = req.body;
@@ -52,6 +52,7 @@ const handlePost = async (req, res, next, workStatus, workPlace) => {
     
     const messageText = `*${userName}* | ${workPlace} ${workStatus} - ${timeEdited}`; 
     slackConnect.sendSlack(messageText, userName, userImg);
+    console.log(`✅ Slack Messsage Sended! : ${messageText}`);
 
     ssc.authGoogleSheet(); 
     const payload = {
@@ -62,6 +63,7 @@ const handlePost = async (req, res, next, workStatus, workPlace) => {
         time_edited : timeEdited
     };
     ssc.addSheetRow(payload);
+    console.log(`✅ Spreasheet Row added! : ${messageText}`);
 }
 
 /* POST */
