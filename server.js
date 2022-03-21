@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 
 const handlePost = async (req, res, next, workStatus, workPlace) => {
     // TODO : Slack 회신
-    res.send('하이!');
+    res.send('완료!');
 
     const {text} = req.body;
     const {user_id} = req.body;
