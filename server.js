@@ -50,7 +50,7 @@ const handlePost = async (req, res, next, workStatus, workPlace) => {
         timeEdited = timeFormat;
     }
     
-    const messageText = `*${userName}* | ${workPlace} ${workStatus} - ${timeEdited}`; 
+    const messageText = `${workPlace} ${workStatus} - ${timeEdited}`; 
     slackConnect.sendSlack(messageText, userName, userImg);
     console.log(`✅ Slack Messsage Sended! : ${messageText}`);
 
