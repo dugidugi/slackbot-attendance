@@ -1,6 +1,7 @@
 require('dotenv').config();
 const ssc = require('./spreadsheet');
 const slackConnect = require('./slackConnect');
+const morgan = require('morgan')
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -20,6 +21,8 @@ app.use(bodyParser.json());
 app.listen(port, () => {
     console.log(`server is listening 3000`);
 });
+
+app.use(morgan('combined'));
 
 app.get("/", (req, res) => {
     res.send("hello!");
