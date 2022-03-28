@@ -52,7 +52,7 @@ const handlePost = async (req, res, next, workStatus, workPlace) => {
     
     const messageText = `${workPlace} ${workStatus} - ${timeEdited}`; 
     slackConnect.sendSlack(messageText, userName, userImg);
-    console.log(`✅ Slack Messsage Sended! : ${messageText}`);
+    console.log(`✅ Slack Messsage Sended! : ${userName} ${messageText}`);
 
     ssc.authGoogleSheet(); 
     const payload = {
@@ -63,7 +63,7 @@ const handlePost = async (req, res, next, workStatus, workPlace) => {
         time_edited : timeEdited
     };
     ssc.addSheetRow(payload);
-    console.log(`✅ Spreasheet Row added! : ${messageText}`);
+    console.log(`✅ Spreasheet Row added! : ${userName} ${messageText}`);
 }
 
 /* POST */
